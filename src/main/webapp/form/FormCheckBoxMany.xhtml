@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+
+    <h4>Form Variabel Array (Sudah diisi di kelas)</h4>
+    <hr/>
+    <h:form id="form">
+        <h:selectManyCheckbox value="#{formMany.arr}">
+            <f:selectItem itemValue="Item A" itemLabel="Item A"/>
+            <f:selectItem itemValue="Item B" itemLabel="Item B"/>
+        </h:selectManyCheckbox>
+        <h:commandButton action="/pages/page2" value="Submit Item"/>
+    </h:form>
+
+    <h4>Form Variabel Array (Belum Diisi dari Kelas)</h4>
+    <hr/>
+    <h:form>
+        <h:selectManyCheckbox value="#{formEmpty.names}">
+            <f:selectItem itemValue="Arief" itemLabel="Arief"/>
+            <f:selectItem itemValue="Putro" itemLabel="Putro"/>
+            <f:selectItem itemValue="Hello" itemLabel="Hello"/>
+        </h:selectManyCheckbox>
+        <h:commandButton action="/pages/page2" value="Submit Names"/>
+    </h:form>
+
+</h:body>
+</html>

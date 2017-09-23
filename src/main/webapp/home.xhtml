@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+
+<h:body>
+
+    <h:form id="form">
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td><h:inputText value="#{form.nama}" id="nama"/></td>
+            </tr>
+            <tr>
+                <td>Login Status</td>
+                <td><h:selectBooleanCheckbox value="#{form.loginStatus}" id="loginStats"/></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width: 100%;">
+                    <h:commandButton  value="Submit Nama" id="submit" action="#{form.goPage1()}"  onclick="return validasi()"/>
+                </td>
+            </tr>
+        </table>
+    </h:form>
+
+    <h:link outcome="form/FormCheckBoxMany" value="Form Checkbox Many"/><br/>
+    <h:link outcome="list/ListPage" value="ListPage View"/>
+
+</h:body>
+
+    <script type="text/javascript">
+        function validasi() {
+           var nama = document.getElementById('form:nama').value;
+
+           if(nama === undefined || nama.trim() === '' || nama === ''){
+               alert('Masih Ada Yang Kosong');
+               return false;
+           }
+        }
+    </script>
+
+</html>
